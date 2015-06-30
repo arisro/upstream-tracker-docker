@@ -1,0 +1,23 @@
+web:
+  build: ./lemp/
+  environment:
+    - HOSTNAMES=www.upstream-tracker.com
+    - http_proxy=http://buc-net-proxy.ubisoft.org:3128
+    - https_proxy=http://buc-net-proxy.ubisoft.org:3128
+  ports:
+    - "9001:80"
+  volumes:
+    - ./data/web/var/lib/mysql:/var/lib/mysql
+    - ../website:/var/www
+
+tracker:
+  build: ./lemp/
+  environment:
+    - HOSTNAMES=tracker.upstream-tracker.com
+    - http_proxy=http://buc-net-proxy.ubisoft.org:3128
+    - https_proxy=http://buc-net-proxy.ubisoft.org:3128
+  ports:
+    - "9002:80"
+  volumes:
+    - ./data/tracker/var/lib/mysql:/var/lib/mysql
+    - ../tracker:/var/www
