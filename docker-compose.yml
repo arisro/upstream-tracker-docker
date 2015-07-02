@@ -6,6 +6,8 @@ web:
     - https_proxy=http://buc-net-proxy.ubisoft.org:3128
   ports:
     - "9001:80"
+  links:
+    - tracker:tracker.upstream-tracker.com
   volumes:
     - ./data/web/var/lib/mysql:/var/lib/mysql
     - ../website:/var/www
