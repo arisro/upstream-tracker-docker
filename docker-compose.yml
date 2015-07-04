@@ -2,8 +2,8 @@ web:
   build: ./lemp/
   environment:
     - HOSTNAMES=www.upstream-tracker.com
-    - http_proxy=http://buc-net-proxy.ubisoft.org:3128
-    - https_proxy=http://buc-net-proxy.ubisoft.org:3128
+#    - http_proxy=http://buc-net-proxy.ubisoft.org:3128
+#    - https_proxy=http://buc-net-proxy.ubisoft.org:3128
   ports:
     - "9001:80"
   links:
@@ -16,8 +16,8 @@ tracker:
   build: ./lemp/
   environment:
     - HOSTNAMES=tracker.upstream-tracker.com
-    - http_proxy=http://buc-net-proxy.ubisoft.org:3128
-    - https_proxy=http://buc-net-proxy.ubisoft.org:3128
+#    - http_proxy=http://buc-net-proxy.ubisoft.org:3128
+#    - https_proxy=http://buc-net-proxy.ubisoft.org:3128
   ports:
     - "9002:80"
     - "5900:5900"
