@@ -20,7 +20,12 @@ tracker:
 #    - https_proxy=http://buc-net-proxy.ubisoft.org:3128
   ports:
     - "9002:80"
-    - "5900:5900"
   volumes:
     - ./data/tracker/var/lib/mysql:/var/lib/mysql
     - ../tracker:/var/www
+
+selenium:
+  build: ./selenium/
+  ports:
+    - "4444:4444"  
+    - "5900:5900"
