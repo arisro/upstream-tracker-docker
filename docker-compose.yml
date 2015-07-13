@@ -26,8 +26,9 @@ tracker:
 
 selenium:
   build: ./selenium/
-  links:
-    - tracker:tracker.upstream-tracker.com
+  privileged: true
+  environment:
+    - skip_domains=mmtro.com
   ports:
     - "4444:4444"  
     - "5900:5900"
